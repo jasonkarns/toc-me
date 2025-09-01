@@ -13,11 +13,14 @@
     "probot-app"
   ],
   "scripts": {
+    "prepare": "esbuild action.js --bundle --platform=node --target=node24 --outfile=dist/action.js",
     "dev": "nodemon --exec 'npm start'",
     "start": "probot run ./index.js",
     "lint": "standard --fix",
     "test": "jest && standard",
-    "test:watch": "jest --watch --notify --notifyMode=change --coverage"
+    "test:watch": "jest --watch --notify --notifyMode=change --coverage",
+    "preversion": "npm run prepare",
+    "version": "git add -- dist"
   },
   "dependencies": {
     "markdown-toc": "^1.2.0",
