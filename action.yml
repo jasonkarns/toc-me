@@ -1,0 +1,7 @@
+name: toc-me
+branding:
+  icon: list
+  color: blue
+runs:
+  using: "node24"
+  main: "dist/action.js"
